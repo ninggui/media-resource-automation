@@ -1,47 +1,40 @@
-# media-resource-automation
+# 影视资源自动化
 
-影视资源自动化：资源站搜片 → 提取磁力链接 → 网盘离线缓存 → 在线观看。一条龙自动化找片链路。
+![GitHub stars](https://img.shields.io/github/stars/ninggui/media-resource-automation)
+![License](https://img.shields.io/github/license/ninggui/media-resource-automation)
+[![SkillHub](https://img.shields.io/badge/SkillHub-在线安装-blue)](https://skillhub.cn/skills/media-resource-automation)
+
+资源站搜片→提取磁力→网盘离线→在线观看。
 
 ## 这是什么
 
-一个可复用的 AI Agent 技能（Skill），来自真实业务场景沉淀。用于"想看电影但不想手动搜资源"的场景——自动从资源站搜索、筛选、提取下载链接，并（可选）离线缓存到网盘。
+一个可复用的 AI Agent 技能（Skill），来自真实业务场景沉淀，含完整执行流程、避坑清单与验证步骤。
 
-## 解决的问题
+## 快速使用
 
-- 找片源耗时：多个资源站来回切换搜索
-- 假资源/广告资源多，筛选成本高
-- 磁力链接提取麻烦
-- 下载管理繁琐
+将本仓库放入 Agent 技能目录后，用对应触发词调用（见 SKILL.md），Agent 会自动加载并执行完整流程。
 
-## 核心流程
+## 核心能力
 
-1. **登录资源站**——自动登录（账号密码从安全位置读取）
-2. **搜索筛选**——按关键词搜索，按质量/大小/清晰度筛选
-3. **提取磁力**——从结果页提取磁力链接
-4. **离线缓存**——（可选）提交到网盘离线下载
-5. **在线观看**——缓存完成后可直接在线看
+| 能力 | 说明 |
+|------|------|
+| 资源站搜索与磁力提取 |
+| 115/qBittorrent 离线缓存 |
+| 去重历史库 |
+| 网盘链接整理 |
 
-## 筛选规则示例
+## 使用方式（安装）
 
-- 4K 资源优先，≥15GB 优先
-- 排除广告/假资源特征
-- 按用户偏好设定（如"4K≥15G优先~20G"）
+- **Hermes**: 放入 `skills/` 目录
+- **Claude**: 放入 `~/.claude/skills/`
+- **其他 Agent**: 按对应 SKILL.md 格式放入技能目录
+- **SkillHub 一键安装**: https://skillhub.cn/skills/media-resource-automation
 
-## 使用方式
+## 优势
 
-将本仓库内容放入你的 Agent 技能目录：
-
-- **Hermes**: `skills/` 目录
-- **Claude**: `~/.claude/skills/`
-- **其他 Agent**: 按对应 SKILL.md 格式
-
-Agent 会在匹配触发条件时自动加载并使用。
-
-## 典型场景
-
-- "帮我找 XX 电影的4K资源"
-- "搜一下最近上映的片"
-- "把这部片缓存到网盘"
+- 主资源站单源策略（防 ban）
+- 1080p+中字/国配优先
+- 一键复制输出格式
 
 ## 内容结构
 
